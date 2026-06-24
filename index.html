@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Untuk Sayang 💕</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Baloo+2:wght@600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ SCENE: LOADING ============ -->
+  <div id="scene-loading" class="scene">
+    <div class="loading-heart"></div>
+    <p class="loading-text">Sebentar ya...</p>
+  </div>
+
+  <!-- ============ SCENE: GATE ============ -->
+  <div id="scene-gate" class="scene">
+    <div class="gate-card" id="gate-card">
+      <h1 class="gate-title">Masukin Tanggalnya</h1>
+      <p class="gate-sub">DD MM YYYY</p>
+      <div class="gate-slots" id="gate-slots"></div>
+      <div class="gate-keypad" id="gate-keypad">
+        <button class="gate-key" data-key="1">1</button>
+        <button class="gate-key" data-key="2">2</button>
+        <button class="gate-key" data-key="3">3</button>
+        <button class="gate-key" data-key="4">4</button>
+        <button class="gate-key" data-key="5">5</button>
+        <button class="gate-key" data-key="6">6</button>
+        <button class="gate-key" data-key="7">7</button>
+        <button class="gate-key" data-key="8">8</button>
+        <button class="gate-key" data-key="9">9</button>
+        <span></span>
+        <button class="gate-key" data-key="0">0</button>
+        <button class="gate-key key-back" data-key="back">⌫</button>
+      </div>
+      <p class="gate-clue" id="gate-clue"></p>
+    </div>
+  </div>
+
+  <!-- ============ SCENE: MAIN (hidden until unlocked) ============ -->
+  <div id="scene-main" class="hidden">
+
+    <!-- floating UI -->
+    <div class="egg-logo" id="egg-logo">
+      <svg viewBox="0 0 32 28"><path d="M16 26C16 26 2 17.5 2 8.8C2 3.9 6 0.5 10.3 0.5C13 0.5 15 2 16 4C17 2 19 0.5 21.7 0.5C26 0.5 30 3.9 30 8.8C30 17.5 16 26 16 26Z"/></svg>
+    </div>
+    <button class="night-toggle" id="night-toggle">🌙</button>
+    <button class="music-toggle" id="music-toggle">🎵</button>
+
+    <!-- ambient layers -->
+    <div id="floating-hearts-layer"></div>
+    <div id="touch-trail-layer"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- lightbox -->
+    <div class="lightbox" id="lightbox">
+      <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <!-- easter egg modal -->
+    <div class="egg-modal" id="egg-modal">
+      <div class="egg-card">
+        <p id="egg-message"></p>
+        <button class="egg-close" id="egg-close">Tutup</button>
+      </div>
+    </div>
+
+    <!-- SECTION 1: GREETING -->
+    <section class="section section-1">
+      <h1 class="greeting-text reveal" id="greeting-text"></h1>
+      <span class="scroll-hint"></span>
+    </section>
+
+    <!-- SECTION 2: SURAT CINTA -->
+    <section class="section section-2">
+      <h2 class="section-title reveal">Ada Surat Buat Kamu</h2>
+      <button class="letter-trigger reveal" id="letter-trigger">Buka Suratnya 💌</button>
+      <div class="letter-card hidden" id="letter-card"></div>
+      <span class="scroll-hint"></span>
+    </section>
+
+    <!-- SECTION 3: TOGETHER COUNTER -->
+    <section class="section section-3">
+      <h2 class="counter-headline reveal" id="counter-headline"></h2>
+      <div class="counter-live reveal">
+        <div class="counter-box"><div class="num" id="count-days">0</div><div class="label">Hari</div></div>
+        <div class="counter-box"><div class="num" id="count-hours">00</div><div class="label">Jam</div></div>
+        <div class="counter-box"><div class="num" id="count-minutes">00</div><div class="label">Menit</div></div>
+        <div class="counter-box"><div class="num" id="count-seconds">00</div><div class="label">Detik</div></div>
+      </div>
+      <span class="scroll-hint"></span>
+    </section>
+
+    <!-- SECTION 4: GALERI FOTO -->
+    <section class="section section-4">
+      <h2 class="section-title reveal">Momen Kita</h2>
+      <div class="gallery-grid reveal" id="gallery-grid"></div>
+      <span class="scroll-hint"></span>
+    </section>
+
+    <!-- SECTION 5: REASONS I LOVE YOU -->
+    <section class="section section-5">
+      <h2 class="section-title reveal">Alasan Aku Sayang Kamu</h2>
+      <div class="reason-card reveal">
+        <p class="reason-text" id="reason-text"></p>
+      </div>
+      <button class="btn-pill reveal" id="reason-btn">Kasih Aku Alasan 💭</button>
+      <span class="scroll-hint"></span>
+    </section>
+
+    <!-- SECTION 6: FINAL REVEAL -->
+    <section class="section section-6" id="section-final">
+      <p class="final-title reveal">Happy Birthday,</p>
+      <h1 class="final-name reveal">Indah Kusuma Atmaja! 🎉</h1>
+      <p class="final-closing reveal">Makasih udah jadi Sayang yang paling sabar nungguin waktu aku. I love you 💕</p>
+      <p class="last-visited reveal" id="last-visited"></p>
+    </section>
+
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/engine.js"></script>
+</body>
+</html>
